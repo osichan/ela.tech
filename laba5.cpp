@@ -12,9 +12,9 @@ int main() {
 	one.Add_atom(C);
 	two.Add_atom(B);
 	two.Add_atom(D);
-	cout<<"   one "<<endl<<"average mass = ", one.findAverageMass();
+	cout<<"   one "<<endl<<"average mass = "<< one.findAverageMass();
 	one.sort_by_atomic_mass();
-	cout<<endl<<endl<<"two "<<endl<<"average mass = " << two.findAverageMass();
+	cout << endl << endl << "two " << endl << "average mass = " << two.findAverageMass();
 	two.sort_by_atomic_mass();
 	return 0;
 }

@@ -14,13 +14,14 @@ enum type {
 string eType[] = {"ISOTYPE","RADIOACTIVE","ION","ANTIMATTER","STABLE"};
 
 class Atom {
-public:
+private:
 	string name;
 	long double atomic_mass;
 	int neutrons;
 	int protons;
 	int electrons;
 	string type;
+public:
 	Atom(string name ,long double atomic_mass, int neutrons, int protons, int electrons,enum type type)
 	{
 		this->name = name;
@@ -28,19 +29,18 @@ public:
 		this->neutrons = neutrons;
 		this->protons = protons;
 		this->electrons = electrons;
-		cout << "atomic_mass   " << this->atomic_mass << endl;
-		cout << "neutrons   " << this->neutrons << endl;
-		cout << "protons   " << this->protons << endl;
-		cout << "electrons   " << this->electrons << endl;
-		cout << "type   " << eType[type] << endl;
+		cout << name<<"    ";
 		isNeutral();
 	}
-	void isNeutral() {
-		if (this->neutrons == this->electrons) {
-			cout << "true" << endl << endl;
-		}
-		else {
-			cout << "false" << endl << endl;
-		}
-	}
+	void isNeutral();
+	string getName() { return name; }
+	long double getAtomicMass() { return atomic_mass; }
 };
+void Atom::isNeutral() {
+	if (neutrons == electrons) {
+		cout << "true" << endl << endl;
+	}
+	else {
+		cout << "false" << endl << endl;
+	}
+}
